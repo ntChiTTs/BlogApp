@@ -1,0 +1,55 @@
+<div *ngIf=!blogDeleted class="panel panel-info">
+  <div class="panel-heading">
+    <strong>{{blog.title}}</strong> by {{blogOwner.username || 'anonymous'}}
+    <!--<span style="float: right">last modified {{blog.lastModified.toLocaleString()}}</span>-->
+    <span class="pull-right"><strong>last modified</strong> {{blog.lastModified.toLocaleString()}}</span>
+  </div>
+  <div class="panel-body">
+    <div [innerHTML]="blogHtmlBody"></div>
+  </div>
+  <div class="panel-footer">
+    <table style="width: 100%">
+      <tr>
+        <td style="width: 80%">
+          <span class="pull-left options_span">
+            <strong>Categories:</strong> 
+            <nav style="display: inline">
+              <span *ngFor="let category of categories">&nbsp;&nbsp;<a [routerLink]="['/categories']" [queryParams]="{category: category.id}">{{category.name}}</a></span>
+            </nav>
+    
+          </span>
+        </td>
+        <td style="width: 20%">
+          <span class="pull-right options_span">
+            <ul class="options_list">
+              <li>
+                <a (click)="editThisBlog()">
+                  <span class="glyphicon glyphicon-pencil"></span>
+                </a>
+              </li>
+              <li>
+                <a (click)="deleteThisBlog()">
+                  <span class="glyphicon glyphicon-trash"></span>
+                </a>
+              </li>
+              <li *ngIf=!blogMarkedAsFavourite>
+                <a (click)="favouriteThisBlog(true)">
+                  <span class="glyphicon glyphicon-heart-empty"></span>
+                </a>
+              </li>
+              <li *ngIf=blogMarkedAsFavourite>
+                <a (click)="favouriteThisBlog(false)">
+                  <span class="glyphicon glyphicon-heart" style="color: red"></span>
+                </a>
+              </li>
+            </ul>
+          </span>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+<div *ngIf=blogDeleted class="panel">
+  This blog has been deleted.
+</div>

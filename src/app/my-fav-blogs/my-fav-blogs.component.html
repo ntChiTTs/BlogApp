@@ -1,0 +1,18 @@
+<!-- Blog Content -->
+<div *ngIf="showMyFavBlogs" class="div_blog_content">
+  
+  <!-- Ordered blogs ( order can be - latest, popular, etc.. ) -->
+  <div class="div_ordered_blogs">
+    <div class="div_blog_order_descriptor">
+      Latest Favourite Blogs
+    </div>
+    <ul>
+      <li *ngFor="let blog of myFavBlogsLatestFirst">
+        <app-blog [blog]="blog"></app-blog>
+      </li>
+    </ul>
+  </div>
+</div>
+<div *ngIf="!showMyFavBlogs">
+  <div class="div_vertical_center_text"><h2>{{componentMessage}}</h2></div>
+</div>

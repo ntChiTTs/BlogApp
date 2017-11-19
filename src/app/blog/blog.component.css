@@ -1,0 +1,29 @@
+span.options_span {
+  height: 100%;
+}
+
+ul.options_list {
+  list-style-type: none;
+  height: 100%;
+}
+
+ul.options_list li {
+  display: inline-block;
+  float: left;
+  width: 30px;
+  height: 100%;
+}
+
+ul.options_list li {
+  color: #000000;
+  opacity: 0.3;
+}
+ul.options_list li:hover {
+  opacity: 1;
+}
+
+ul.options_list li a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}

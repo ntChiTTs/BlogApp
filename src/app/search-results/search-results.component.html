@@ -1,0 +1,15 @@
+<!-- Blog Content -->
+<div class="div_blog_content">
+  
+  <!-- Ordered blogs ( order can be - latest, popular, etc.. ) -->
+  <div class="div_ordered_blogs">
+    <div class="div_blog_order_descriptor">
+      Search Results ( {{foundBlogs.length}} {{foundBlogs.length == 1 ? 'item' : 'items'}} )
+    </div>
+    <ul>
+      <li *ngFor="let blog of foundBlogsLatestFirst">
+        <app-blog [blog]="blog"></app-blog>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="div_blog_content">
+  <div *ngIf="categoryToShow == undefined">
+    <div class="div_ordered_blogs">
+      <div class="div_blog_order_descriptor">
+        All Categories
+      </div>
+      <ul class="list-group">
+        <li *ngFor="let category of allCategories" class="list-group-item">
+          <a [routerLink]="['/categories']" [queryParams]="{category: category.id}">{{category.name}}</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+  <div *ngIf="categoryToShow != undefined">
+    <div class="div_ordered_blogs">
+      <div class="div_blog_order_descriptor">
+        Popular Blogs under {{categoryToShow.name}}
+      </div>
+      <ul>
+        <li *ngFor="let blog of catBlogsPopularFirst">
+          <app-blog [blog]="blog"></app-blog>
+        </li>
+      </ul>
+    </div>
+
+    <br>
+
+    <div class="div_ordered_blogs">
+      <div class="div_blog_order_descriptor">
+        Latest Blogs under {{categoryToShow.name}}
+      </div>
+      <ul>
+        <li *ngFor="let blog of catBlogsLatestFirst">
+          <app-blog [blog]="blog"></app-blog>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

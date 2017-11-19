@@ -1,0 +1,16 @@
+div.div_blog_content {
+  margin: 0 10%;
+}
+
+div.div_blog_order_descriptor {
+  font-size: 2em;
+}
+
+div.div_ordered_blogs ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+div.div_ordered_blogs ul li {
+  width: 100%;
+}

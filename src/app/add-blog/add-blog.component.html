@@ -1,0 +1,64 @@
+<div class="container div_add_blog">
+  <div class="div_add_blog">
+    <div *ngIf="showAddBlog">
+      <h1>Add Blog</h1>
+      <form (ngSubmit)="onSubmit()" #addBlogForm="ngForm">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" id="title"
+                required
+                [(ngModel)]="title" name="title"
+                #titleModel="ngModel">
+          <!--       
+          <div [hidden]="titleModel.valid || titleModel.pristine"
+              class="alert alert-danger">
+            Title is required
+          </div>
+          -->
+        </div>
+        
+        <div class="form-group">
+          <label for="Content">Content</label>
+          <textarea rows="15" class="form-control" id="content"
+                required
+                [(ngModel)]="content" name="content"
+                #contentModel="ngModel"></textarea>
+          <!--
+          <div [hidden]="contentModel.valid || contentModel.pristine"
+              class="alert alert-danger">
+            Content is required
+          </div>
+          -->
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">Categories</label>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-gap: 10px;">
+            <div type="checkbox" *ngFor="let category of categories; let i = index">
+              <input type="checkbox" class="form-check-input" id="checkbox{{category.id}}"
+                [(ngModel)]="categorySelected[i]" name="{{category.name}}"
+                value="{{category.name}}"
+                checked="{{categorySelected[i]}}">&nbsp;&nbsp;&nbsp;{{category.name}}
+            </div>
+          </div>
+          <!--
+          <textarea rows="30" type="content" class="form-control" id="content"
+                required
+                [(ngModel)]="content" name="content"
+                #contentModel="ngModel"></textarea>
+          -->
+          <!--
+          <div [hidden]="contentModel.valid || contentModel.pristine"
+              class="alert alert-danger">
+            Content is required
+          </div>
+          -->
+        </div>
+  
+        <button type="submit" class="btn btn-success" [disabled]="!addBlogForm.form.valid">Submit</button>
+      </form>
+    </div>
+    <div *ngIf="!showAddBlog">
+      <div class="div_vertical_center_text"><h2>{{componentMessage}}</h2></div>
+    </div>
+  </div>
+</div>
