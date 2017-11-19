@@ -1,0 +1,82 @@
+{
+  "users": [
+    {
+      "username": "asdf",
+      "password": "qwerty",
+      "blogsOwned": [
+        1,
+        2
+      ],
+      "favouriteBlogs": [],
+      "id": 1
+    },
+    {
+      "username": "zxcv",
+      "password": "lkjhgf",
+      "blogsOwned": [],
+      "favouriteBlogs": [],
+      "id": 2
+    }
+  ],
+  "blogs": [
+    {
+      "title": "lnhkavn",
+      "body": "edit check\nlasknc\nsadvn\nasdkjvb\nasdv l\ndh vauo\ndafkj ",
+      "owner": 1,
+      "favouriteOf": [],
+      "lastModified": "2017-11-18T14:31:05.985Z",
+      "categories": [
+        1,
+        2,
+        3
+      ],
+      "id": 1
+    },
+    {
+      "title": "kuch",
+      "body": "let's see what happens",
+      "owner": 1,
+      "favouriteOf": [],
+      "lastModified": "2017-11-18T14:20:58.305Z",
+      "categories": [
+        5
+      ],
+      "id": 2
+    }
+  ],
+  "categories": [
+    {
+      "name": "cat1",
+      "relatedBlogs": [
+        1
+      ],
+      "id": 1
+    },
+    {
+      "name": "cat2",
+      "relatedBlogs": [
+        1
+      ],
+      "id": 2
+    },
+    {
+      "name": "cat3",
+      "relatedBlogs": [
+        1
+      ],
+      "id": 3
+    },
+    {
+      "name": "cat4",
+      "relatedBlogs": [],
+      "id": 4
+    },
+    {
+      "name": "cat5",
+      "relatedBlogs": [
+        2
+      ],
+      "id": 5
+    }
+  ]
+}
