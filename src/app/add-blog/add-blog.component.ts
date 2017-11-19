@@ -60,7 +60,7 @@ export class AddBlogComponent implements OnInit {
         if(blogsOwned.indexOf(blogRes.id) == -1) {
           blogsOwned.push(blogRes.id);
           this.userAccService.patchUser(this.getCurrentUser().id, { blogsOwned: blogsOwned } as User)
-          .subscribe((userRes) => AppSettings.CURRENT_USER = userRes);
+          .subscribe((userRes) => userAccSettings.setCurrentUser(userRes));
         }
         
         selectedCategories.forEach((catId) => {
