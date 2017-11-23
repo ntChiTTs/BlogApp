@@ -36,7 +36,10 @@ export class CategoriesComponent implements OnInit {
     this.route.queryParams
     .subscribe((params) => {
       let catId: number = params['category'];
-      if(catId == undefined) return;
+      if(catId == undefined) {
+        this.categoryToShow = undefined;
+        return;
+      }
       this.categoriesService.getCategoryById(catId)
       .subscribe((res) => {
         this.categoryToShow = res;
